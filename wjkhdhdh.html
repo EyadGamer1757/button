@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the button</title>
+    <style>
+        #button {
+            background-color: red;
+            width: 100px;
+            height: 50px;
+            border-radius: 50px 50px 50px 50px;
+        }
+        body {
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        #secret_end{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1"><em>.</em></h1>
+    <button onclick="end()" id="button">See the hidden content</button>
+    <img src="" id="img">
+    <button id="secret_end" onclick="secret()"></button>
+    <script>
+        var h1 = document.getElementById('h1');
+        var button = document.getElementById('button');
+        var img = document.getElementById('img');
+        function secret(){
+            h1.innerHTML = 'Click to see you';
+            button.innerHTML = '<a href=\'https://www.google.com/search?q=einestine+image&sca_esv=44a09aed9e2edf4e&sxsrf=ADLYWILTNEAvV_kKKEiQqk7cU_Xg6YIhVg%3A1717251679674&ei=Xy5bZrrpKMiLxc8PtKfIsAc&udm=&ved=0ahUKEwj6lO2CzbqGAxXIRfEDHbQTEnYQ4dUDCBA&uact=5&oq=einestine+image&gs_lp=Egxnd3Mtd2l6LXNlcnAiD2VpbmVzdGluZSBpbWFnZTIEECMYJzIJEAAYgAQYExgNMgkQABiABBgTGA0yCRAAGIAEGBMYDTIJEAAYgAQYExgNMgkQABiABBgTGA0yCRAAGIAEGBMYDTIKEAAYExgNGB4YDzIIEAAYExgNGB4yChAAGBMYDRgeGA9IgxxQrgZYkxhwAXgBkAEAmAGQBKABkASqAQM1LTG4AQPIAQD4AQGYAgKgAr0EwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigWYAwCIBgGQBgqSBwUxLjQtMaAH0AU&sclient=gws-wiz-serp\'>click to see you</a>';
+        }
+        function end(){
+            if(h1.innerHTML == '<em>.</em>'){
+                h1.innerHTML = '<em>The code is the best</em>';
+                button.innerHTML = 'Ok see more';
+                return;
+            }else if(h1.innerHTML == '<em>The code is the best</em>'){
+                h1.innerHTML = '<em>Don\'t click</em>';
+                button.innerHTML = 'Stop clicking';
+                return;
+            }else if(h1.innerHTML == '<em>Don\'t click</em>'){
+                h1.innerHTML = '<em>I said stop</em>';
+                button.innerHTML = 'You won,Now you should to stop';
+                h1.style.color = 'red';
+                alert('You won but stop clicking');
+                return;
+            }else if(h1.innerHTML == '<em>I said stop</em>'){
+                h1.style.color = 'green';
+                h1.innerHTML = '<em>Let\'s see what do you want</em>';
+                button.innerHTML = 'Don\'t do it you must stop before......';
+                return;
+            }else if(h1.innerHTML == '<em>Let\'s see what do you want</em>'){
+                h1.style.color = 'white';
+                img.setAttribute('src' , 'images.jpeg');
+                h1.innerHTML = '<em>I said to you to stop</em>';
+                img.setAttribute('width' , '500px');
+                img.setAttribute('height' , '500px');
+                button.innerHTML = 'I tried to alert you';
+                return;
+            }else if(h1.innerHTML == '<em>I said to you to stop</em>'){
+                img.setAttribute('width' , '');
+                img.setAttribute('height' , '');
+                img.setAttribute('src' , '');
+                h1.innerHTML = '<em>It\'s the war bro</em>';
+                button.innerHTML = 'Stop!!!!!!!!';
+                return;
+            }else if(h1.innerHTML == '<em>It\'s the war bro</em>'){
+                h1.innerHTML = '<em>Don\'t continue</em>';
+                button.innerHTML = 'Don\'t continue';
+                return
+            }else if(h1.innerHTML == '<em>Don\'t continue</em>'){
+                h1.innerHTML = '<em>It\'s the second chance don\'t continue</em>';
+                return;
+            }else if(h1.innerHTML == '<em>It\'s the second chance don\'t continue</em>'){
+                h1.innerHTML = '<em>Do you want to continue</em>';
+                button.innerHTML = 'Press me if you want to continue';
+                return;
+            }else if(h1.innerHTML == '<em>Do you want to continue</em>'){
+                h1.innerHTML = '<em>I found all your images</em>';
+                button.innerHTML = 'Press to see it';
+                return;
+            }else if(h1.innerHTML == '<em>I found all your images</em>'){
+                h1.innerHTML = 'See the image by clicking';
+                button.innerHTML = '<a href=\'https://www.google.com/search?q=donkey+image&oq=donkey+image&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyCAgBEAAYFhgeMggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMggICBAAGBYYHjIICAkQABgWGB7SAQg1OTQ2ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8\'>Press if you want to see your image</a>';
+            }
+        }
+    </script>
+</body>
+</html>
